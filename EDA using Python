@@ -1,0 +1,11 @@
+import pandas as pd
+import numpy as numpy
+import matplotlib.pyplot as plt
+import seaborn as sns 
+df = pd.read_csv("/content/superstore.csv", encoding='latin1') 
+df.head(5)
+df["Sales"].sum()
+df.groupby("Category")["Sales"].sum().plot(kind="bar")
+plt.show()  
+df.groupby("Month")["Sales"].sum().plot()
+plt.show()
